@@ -1,0 +1,115 @@
+.bg {
+    background-image: url('/public/bg.png');
+    width: 100%;
+}
+
+/* ────────────────────────────────────────────
+   Контейнер игры
+──────────────────────────────────────────── */
+.game {
+    /* занимает всё пространство между приклеенным header и footer */
+    height: 100%;
+    padding-top: 4rem;
+    /* отступ под фиксированный header */
+    padding-bottom: 4rem;
+    /* отступ над фиксированным footer */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ────────────────────────────────────────────
+     Фиксированный header
+  ──────────────────────────────────────────── */
+.game__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 2.5rem;
+    z-index: 10;
+}
+
+.game__header a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.game__header a:hover {
+    text-decoration: underline;
+}
+
+/* ────────────────────────────────────────────
+     Заголовок игры и статус хода (уже центрируются .game)
+  ──────────────────────────────────────────── */
+.game__title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.game__status {
+    margin-top: 8px;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* ────────────────────────────────────────────
+     Фиксированный footer
+  ──────────────────────────────────────────── */
+.game__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 2.5rem;
+    z-index: 10;
+    font-size: 0.9rem;
+}
+
+:root {
+    --primary: #2d8cf0;
+    --bg-cell: #fafafa;
+    --border-cell: #ccc;
+}
+
+.square {
+    background: var(--bg-cell);
+    border-color: var(--border-cell);
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.square:hover:not(:disabled) {
+    transform: scale(1.05);
+    background: #fff;
+}
+
+.square.played {
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.status__player--x {
+    color: red;
+}
+
+.status__player--o {
+    color: blue;
+}

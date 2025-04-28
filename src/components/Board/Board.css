@@ -1,0 +1,8 @@
+/* src/components/Board.css */
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 8px;
+    margin: 16px 0;
+}
