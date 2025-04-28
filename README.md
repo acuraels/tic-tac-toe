@@ -6,7 +6,7 @@
 
 ## 🌐 Ссылка на игру
 
-[🕹️ Перейти](https://acuraels.github.io/tic-tac-toe/)
+[🕹️ Тык 🕹️](https://acuraels.github.io/tic-tac-toe/)
 
 ---
 
